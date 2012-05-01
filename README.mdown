@@ -1,4 +1,4 @@
-= github_uploader
+# github_uploader
 
 Found this in the Rakefile for Ember.js. Looked pretty damn useful.
 
@@ -9,7 +9,7 @@ uploader = GithubUploader.setup_uploader
 GithubUploader.upload_file(uploader, FILENAME_ON_GITHUB, DESCRIPTION, "relative/path/to/file")
 ```
 
-== Contributing to github_uploader
+## Contributing to github_uploader
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
