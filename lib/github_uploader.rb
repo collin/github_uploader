@@ -2,10 +2,9 @@ require "rest-client"
 require "github_api"
 
 class GithubUploader
+  AUTH_NOTE = "Github Uploader (gem)"
 
   def self.setup_uploader
-    require './lib/github_uploader'
-
     # get the github user name
     login = `git config github.user`.chomp
 
@@ -67,10 +66,10 @@ class GithubUploader
     system "stty echo" # enable echoing of entered chars
     puts ""
 
-    # check if the user already granted access for Ember.js Uploader by checking the available authorizations
+    # check if the user already granted access for "Githhub Uploader (gem)" by checking the available authorizations
     response = RestClient.get "https://#{@login}:#{pw}@api.github.com/authorizations"
     JSON.parse(response.to_str).each do |auth|
-      if auth["note"] == "Ember.js Uploader"
+      if auth["note"] == AUTH_NOTE
         # user already granted access, so we reuse the existing token
         @token = auth["token"]
       end
@@ -80,7 +79,7 @@ class GithubUploader
     unless @token
       payload = {
         :scopes => ["public_repo"],
-        :note => "Ember.js Uploader",
+        :note => AUTH_NOTE
         :note_url => "https://github.com/#{@username}/#{@repo}"
       }
       response = RestClient.post "https://#{@login}:#{pw}@api.github.com/authorizations", payload.to_json, :content_type => :json
