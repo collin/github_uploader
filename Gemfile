@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 gem "rest-client"
-gem "github_api"
+gem "github_api", "0.4.11"
 
 group :development do
   gem "shoulda", ">= 0"

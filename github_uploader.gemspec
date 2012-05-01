@@ -18,12 +18,14 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".rvmrc",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
     "README.mdown",
     "Rakefile",
     "VERSION",
+    "github_uploader.gemspec",
     "lib/github_uploader.rb",
     "test/helper.rb",
     "test/test_github_uploader.rb"
@@ -39,14 +41,14 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rest-client>, [">= 0"])
-      s.add_runtime_dependency(%q<github_api>, [">= 0"])
+      s.add_runtime_dependency(%q<github_api>, ["= 0.4.11"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_development_dependency(%q<bundler>, ["~> 1.1.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.3"])
     else
       s.add_dependency(%q<rest-client>, [">= 0"])
-      s.add_dependency(%q<github_api>, [">= 0"])
+      s.add_dependency(%q<github_api>, ["= 0.4.11"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_dependency(%q<bundler>, ["~> 1.1.0"])
@@ -54,7 +56,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<rest-client>, [">= 0"])
-    s.add_dependency(%q<github_api>, [">= 0"])
+    s.add_dependency(%q<github_api>, ["= 0.4.11"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
     s.add_dependency(%q<bundler>, ["~> 1.1.0"])
