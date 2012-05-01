@@ -79,7 +79,7 @@ class GithubUploader
     unless @token
       payload = {
         :scopes => ["public_repo"],
-        :note => AUTH_NOTE
+        :note => AUTH_NOTE,
         :note_url => "https://github.com/#{@username}/#{@repo}"
       }
       response = RestClient.post "https://#{@login}:#{pw}@api.github.com/authorizations", payload.to_json, :content_type => :json
