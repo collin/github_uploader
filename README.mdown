@@ -1,6 +1,13 @@
 = github_uploader
 
-Description goes here.
+Found this in the Rakefile for Ember.js. Looked pretty damn useful.
+
+Use it:
+
+```ruby
+uploader = GithubUploader.setup_uploader
+GithubUploader.upload_file(uploader, FILENAME_ON_GITHUB, DESCRIPTION, "relative/path/to/file")
+```
 
 == Contributing to github_uploader
  
@@ -14,6 +21,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2012 Collin Miller. See LICENSE.txt for
-further details.
+Copyright (c) 2011 Yehuda Katz, Tom Dale, Charles Jolley and Ember.js contributors. 
+See LICENSE.txt for further details.
 

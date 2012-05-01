@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "github_uploader"
   gem.homepage = "http://github.com/collin/github_uploader"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Upload files to github.}
+  gem.description = %Q{Upload files to github, useful in your Rakefile.}
   gem.email = "collintmiller@gmail.com"
-  gem.authors = ["Collin Miller"]
+  gem.authors = ["Yehuda Katz", "Tom Dale", "Charles Jolley", "Ember.js contributors"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -30,14 +30,6 @@ Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
-end
-
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
 end
 
 task :default => :test
